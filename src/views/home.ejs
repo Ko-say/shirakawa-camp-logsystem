@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+<body>
+    <%- include('partials/navbar') %> 
+
+    <div id="contents" class="container border border-black border-4 mt-5">
+        <div class="row text-center">
+            <div class="col-6 top-contents border-end border-black border-2 border-bottom ">
+                <span class="explanation">Devices</span>
+                <div id="devices" class="top-number"><a href="./Device" style="text-decoration:none;"><%= totalDevices %></a></div>
+            </div>
+            <div class="col-6 top-contents border-start border-black border-2 border-bottom">
+                <span class="explanation">Average Traffics</span>
+                <div id="traffics" class="top-number"><%= totalAverageTraffic %></div>
+                <span>MB</span>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-12 border-top border-black border-2">
+                <div class="explanation">MAP</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

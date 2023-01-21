@@ -1,0 +1,25 @@
+#navbar{
+    background-color: powderblue;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+#contents {
+    font-size:3rem;
+}
+
+.top-number{
+    font-weight: 500;
+    font-size: 5rem;
+    color:#0069d8;
+}
+
+.top-contents{
+    padding: 1em;
+}
+
+.devices{
+    border-right: 3px solid black;
+}

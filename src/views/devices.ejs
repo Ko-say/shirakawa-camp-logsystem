@@ -1,0 +1,34 @@
+<%- include('partials/header') %>
+<body>
+    <%- include('partials/navbar') %>
+
+    <div id="contents" class="container">
+        <table class="table mt-5 fs-5 table-striped">
+            <thead>
+              <tr>
+                <th scope="col">DeviceName</th>
+                <th scope="col">MacAddress</th>
+                <th scope="col">DeviceOS</th>
+                <th scope="col">IPAddress</th>
+                <th scope="col">Traffic</th>
+                <th scope="col">APNumber</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% for(let uniqueDevice of uniqueDevices){ %> 
+                    <tr>
+                        <th scope="row"><%= uniqueDevice.device_name %> </th>
+                        <th><%= uniqueDevice.mac_address %> </th>
+                        <th><%= uniqueDevice.device_os %> </th>
+                        <th><%= uniqueDevice.ip_address %> </th>
+                        <th><%= uniqueDevice.device_traffic %> MB</th>
+                        <th><%= uniqueDevice.ap_number %> </th>
+                    </tr>
+                <% } %> 
+            </tbody>
+          </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

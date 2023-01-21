@@ -1,0 +1,45 @@
+version: '3'
+services:
+  selenium:
+    container_name: selenium-chrome
+    image: selenium/standalone-chrome-debug
+    ports:
+      - 4444:4444
+      - 5900:5900
+    shm_size: "2gb"
+  app:
+    container_name: app
+    build: ./app
+    volumes:
+      - ./app:/opt/app
+    environment:
+      TZ: 'Asia/Tokyo'
+    tty: true
+  db:
+    container_name: db
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: cosylab_merakigo
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
+      TZ: 'Asia/Tokyo'
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    ports:
+      - 3306:3306
+    volumes:
+      - ./db:/var/lib/mysql
+    tty: true
+  web:
+    container_name: web
+    image: node:19
+    tty: true
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./src:/app
+    environment:
+      TZ: 'Asia/Tokyo'
+    working_dir: /app
+    # command: ["node", "index.js"]
+     

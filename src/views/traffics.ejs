@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+<body>
+    <%- include('partials/navbar') %>
+
+    <div id="contents" class="container">
+        <table class="table mt-5 fs-5 table-striped">
+            <thead>
+              <tr>
+                <th scope="col">TrafficName</th>
+                <th scope="col">Traffic</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% for(let uniqueTraffic of uniqueTraffics){ %> 
+                    <tr>
+                        <th scope="row"><%= uniqueTraffic.traffic_name %> </th>
+                        <th><%= uniqueTraffic.traffic %> MB</th>
+                    </tr>
+                <% } %> 
+            </tbody>
+          </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
